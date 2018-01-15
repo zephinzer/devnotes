@@ -2,17 +2,20 @@ package main
 
 import (
 	fmt "fmt"
-)
 
-import (
 	"./diffPackage"
+	renamedPackage "./diffRefPackage"
 )
 
 func main() {
+	defer (func() {
+		fmt.Println("HELLO AFTER THE PROGRAM RETURNS!")
+	})()
 	helloWorld()
 	sayHelloTo("joseph")
 	helloFromTheSamePackage()
 	diffPackage.HelloFromADifferentPackage()
+	renamedPackage.HelloFromARenamedPackage()
 	variableArguments("hi")
 	variableArguments("hi2", 1, 2, 3, 4)
 	aClosure := closure("closure: nope, print this instead.\n")

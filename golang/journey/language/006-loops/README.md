@@ -1,15 +1,14 @@
-# Branches in Golang (`if-else`)
+# Loops in Golang
 
 ## Pre-requisites
 See the [Setting up Go in README.md](../../README.md#setting-up-go) to get started.
 
 ## What's Covered
-If and elses. See the source code at [`./branch-if-else.go`](./branch-if-else.go).
+If and elses. See the source code at [`./loops.go`](./loops.go).
 
 Covered are:
 
-- if
-- else
+- for
 
 Build and run it with:
 
@@ -19,4 +18,5 @@ go run *.go
 
 ## Learnings
 
-- Pretty standard c-like semantics stuff, avoid the `()` brackets
+- Go's `for` is a really useful `for`
+- It is the while loop in Go

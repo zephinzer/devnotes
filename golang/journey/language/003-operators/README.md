@@ -1,7 +1,7 @@
 # Operators in Golang
 
 ## Pre-requisites
-See the [Setting up Go README.md](../../_setup/README.md) to get started.
+See the [Setting up Go in README.md](../../README.md#setting-up-go) to get started.
 
 ## What's Covered
 See the source code at [`./branch-if-else.go`](./branch-if-else.go).

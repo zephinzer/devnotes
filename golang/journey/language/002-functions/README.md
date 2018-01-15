@@ -1,7 +1,7 @@
 # Variables in Golang
 
 ## Pre-requisites
-See the [Setting up Go README.md](../../_setup/README.md) to get started.
+See the [Setting up Go in README.md](../../README.md#setting-up-go) to get started.
 
 ## What's Covered
 Functions and function calls. See the source code at [`./functions.go`](./functions.go).
@@ -14,6 +14,7 @@ Covered are:
 - argument definition
 - variable argument list (variadic functions)
 - closures
+- defer
 
 Build and run it with:
 
@@ -30,6 +31,7 @@ go run *.go
   - The Go compiler actually finds the `main()` function in the `main` package
 - Packages **NEED** to be stored in **different directories**
   - You can't have files specifying different `package` headings in the same directory
-  - The `package` header and `import __packageName__` has to be equal to `__packageName__` or things will fail
+  - The `package` directory name, `package` header (in the code), and `import __packageName__` has to be equal to `__packageName__` or things will fail
 - Exported functions are denoted by CapitalCase
 - Variadic functions must be of single type
+- `defer` can be used for post-function code injection

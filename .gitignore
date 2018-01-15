@@ -2,4 +2,5 @@
 !/**/
 !*.go
 !*.md
+!*.yaml
 !*.gitignore*

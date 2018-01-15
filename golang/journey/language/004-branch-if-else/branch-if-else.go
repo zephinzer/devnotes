@@ -16,4 +16,9 @@ func main() {
 	} else {
 		fmt.Printf("\tb is more than a\n")
 	}
+
+	// usage of short statement
+	if d := 10; d > a {
+		fmt.Println("d is above all else")
+	}
 }

@@ -1,7 +1,7 @@
 # Variables in Golang
 
 ## Pre-requisites
-See the [Setting up Go README.md](../../_setup/README.md) to get started.
+See the [Setting up Go in README.md](../../README.md#setting-up-go) to get started.
 
 ## What's Covered
 Variable assignments and different ways of doing it. See the source code at [`./variables.go`](./variables.go).
