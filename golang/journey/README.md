@@ -6,12 +6,6 @@ The [`./language` directory](./language) contains code demonstrating language se
 
 The [`./application` directory](./application) contains implementation of concepts and other higher level things one can cover with Golang.
 
-You can find a list of [`./notes`](./notes) in that sub-directory:
-
-# Golang Notes
-1. [From a JavaScript Perspective](./notes/from-js-perspective.md)
-2. [Go Web Frameworks Evaluation](./notes/go-web-frameworks-evaluation.md)
-
 # Golang References
 1. [Golang Language Specification](https://golang.org/ref/spec)
 2. [Tour of Go](https://tour.golang.org/welcome/1) (**really useful**)
