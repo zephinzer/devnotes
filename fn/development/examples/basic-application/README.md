@@ -51,5 +51,8 @@ This directory contains examples of the various types of application-level verif
   - Test-driven-development in functions
   - Reading from input
 - [3. Reflection](./README-EX03.md)
-  - Digging into the runtime environment
+  - Runtime environment of a function
+  - Retrieving the HTTP method
+  - Retrieving other HTTP headers
+  - Asynchronous functions
   - Error logging
