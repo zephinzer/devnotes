@@ -1,6 +1,1 @@
-*
-!/**/
-!*.go
-!*.md
-!*.yaml
-!*.gitignore*
+!*/.gitignore
