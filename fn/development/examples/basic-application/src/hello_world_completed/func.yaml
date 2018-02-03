@@ -1,0 +1,5 @@
+name: hello_world_completed
+version: 0.0.2
+runtime: node
+entrypoint: node func.js
+path: /hello_world_completed

@@ -1,0 +1,20 @@
+{
+  "tests": [
+    {
+      "input": {
+        "body": [1, 2, 3]
+      },
+      "output": {
+        "body": 6
+      }
+    },
+    {
+      "input": {
+        "body": [-1, 2, 3]
+      },
+      "output": {
+        "body": 4
+      }
+    }
+  ]
+}

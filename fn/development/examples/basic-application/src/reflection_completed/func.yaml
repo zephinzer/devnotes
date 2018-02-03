@@ -1,0 +1,6 @@
+name: reflection_completed
+version: 0.0.6
+runtime: node
+entrypoint: node func.js
+type: sync
+path: /reflection_completed
