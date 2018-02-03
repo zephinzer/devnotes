@@ -3,8 +3,8 @@ Fn is a serverless Platform-as-a-Service (PaaS) that allows us to host our own F
 
 ## What's In Here
 
-[Deployment on Docker Swarm](./deployment/docker)
-[Developing Fn Applications](./development)
+- [Deployment on Docker Swarm](./deployment/docker)
+- [Developing Fn Applications](./development)
 
 ## Links & Further Reading
 
