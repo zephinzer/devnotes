@@ -14,7 +14,7 @@ Export the `FN_REGISTRY` variable as covered in previous exercises:
 export FN_REGISTRY=127.0.0.1:5000
 ```
 
-## Undersstanding the runtime environment
+## Understanding the runtime environment
 Create a new app called reflection:
 
 ```bash
@@ -123,9 +123,6 @@ mysql -uroot -pdefault_root_password -h127.0.0.1 -P3306 fn
 ```
 
 Select all logs that contain the `call_id` from above. Assuming the `call_id` is `12345678901234567890123456`, we run:
-
-`01C5EBRZ4BR7WGT00000000000`
-
 
 ```mysql
 SELECT * FROM logs WHERE log LIKE "%FN_CALL_ID: '12345678901234567890123456'%";
