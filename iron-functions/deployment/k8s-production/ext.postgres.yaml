@@ -1,0 +1,85 @@
+# PostgreSQL service for Iron Functions
+# REFERENCES:
+#   - https://github.com/iron-io/functions/tree/master/docs/operating/kubernetes/kubernetes-production
+#   - https://hub.docker.com/_/postgres/
+# TODOS:
+#   - replace %__ironfx_db_namespace__% with the namespace to deploy the postgres service in
+#   - replace %__db_password__% with the postgresql username
+#   - replace %__db_username__% with the postgresql password
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ironfx-postgres
+  namespace: %__ironfx_db_namespace__%
+  labels:
+    app: ironfx-postgres
+    env: production
+    type: db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ironfx-postgres
+      env: production
+      type: db
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  template:
+    metadata:
+      name: ironfx-postgres
+      namespace: %__ironfx_db_namespace__%
+      labels:
+        app: ironfx-postgres
+        env: production
+        type: db
+    spec:
+      containers:
+      - name: ironfx-postgres
+        image: postgres:10-alpine
+        imagePullPolicy: Always
+        env:
+        - name: POSTGRES_PASSWORD
+          value: %__db_password__%
+        - name: POSTGRES_USER
+          value: %__db_username__%
+        - name: PGDATA
+          value: /var/lib/postgresql/data/mounted
+        ports:
+        - containerPort: 5432
+        resources:
+          limits:
+            cpu: 500m
+            memory: 512Mi
+          requests:
+            cpu: 250m
+            memory: 256Mi
+        volumeMounts:
+        - name: ironfx-volume
+          mountPath: /var/lib/postgresql/data
+      volumes:
+      - name: ironfx-volume
+        persistentVolumeClaim:
+          claimName: ironfx-volume-claim
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ironfx-postgres
+  namespace: %__ironfx_db_namespace__%
+  labels:
+    app: ironfx-postgres
+    env: production
+    type: db
+spec:
+  ports:
+  - port: 5432
+    targetPort: 5432
+  selector:
+    app: ironfx-postgres
+    env: production
+    type: db

@@ -1,4 +1,4 @@
-# Journey in Golang
+# Golang
 
 So I started my journey in Golang on 7th January 2018. This is a collection of my notes and example applications to prove my understanding of Golang to myself.
 
@@ -49,7 +49,9 @@ go version go1.9.2 darwin/amd64
 ```
 
 ## Install Go extras
-Run the following to install all of Golang's toolchains:
+
+### Visual Studio Code
+Run the following to install all of Golang's toolchains for VSCode integration:
 
 ```bash
 go get -u -v github.com/nsf/gocode

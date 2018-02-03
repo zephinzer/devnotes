@@ -1,0 +1,70 @@
+# Deployment for Iron Functions
+# REFERENCES:
+#   - https://github.com/iron-io/functions/tree/master/docs/operating/kubernetes/kubernetes-production
+# TODOS:
+#   - replace %__ironfx_namespace__% with the namespace for the Iron Functions API
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ironfx
+  namespace: %__ironfx_namespace__%
+  labels:
+    app: ironfx
+    env: production
+    type: app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ironfx
+      env: production
+      type: app
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  template:
+    metadata:
+      name: ironfx
+      namespace: %__ironfx_namespace__%
+      labels:
+        app: ironfx
+        env: production
+        type: app
+    spec:
+      containers:
+      - name: "ironfx"
+        image: "iron/functions:0.2.71"
+        imagePullPolicy: Always
+        ## TODO: for enhanced security (if needed)
+        ##      - create a new container with a user with minimal permissions
+        ##        for running functions
+        ##
+        ## SEE: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
+        ##
+        # securityContext:
+        #   runAsUser: %__USER_ID__%
+        #   fsGroup: %__GROUP_ID__%
+        securityContext:
+          privileged: true
+        ports:
+        - name: ironfx-port
+          containerPort: 8080
+        env:
+        - name: "DOCKER_HOST"
+          value: "unix:///var/run/docker.sock"
+        - name: "MQ_URL"
+          valueFrom:
+            configMapKeyRef:
+              name: "ironfx-config"
+              key: "MQ_URL"
+        volumeMounts:
+        - mountPath: "/var/run/docker.sock"
+          name: "docker-socket"
+          readOnly: false
+      volumes:
+      - name: "docker-socket"
+        hostPath:
+          path: "/var/run/docker.sock"

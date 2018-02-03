@@ -1,0 +1,20 @@
+# Configuration for Iron Functions
+# REFERENCES:
+#   - https://github.com/iron-io/functions/tree/master/docs/operating/kubernetes/kubernetes-production
+# TODOS:
+#   - replace %__ironfx_mq_namespace__% with the namespace this should be stored in
+#   - replace %__redis_service__% with the name of the Redis service
+#   - replace %__redis_namespace__% with the name of the Redis service
+#   - replace %__db_username__% with the Postgres username
+#   - replace %__db_password__% with the Postgres password
+#   - replace %__db_service__% with the name of the Postgres service
+#   - replace %__ironfx_db_service__% with the namespace the Postgres service is running in
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ironfx-config
+  namespace: %__ironfx_namespace__%
+data:
+  MQ_URL: redis://%__mq_service__%.%__ironfx_mq_namespace__%
+  DB_URL: postgres://%__db_username__%:%__db_password__%@%__ironfx_db_service__%.%__db_namespace__%/?sslmode=disable

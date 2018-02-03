@@ -1,0 +1,96 @@
+# Iron Functions UI
+# REFERENCES:
+#   - https://github.com/iron-io/functions-ui
+#   - https://github.com/jetstack/kube-lego
+# TODOS:
+#   - replace %__ironfx_namespace__% with the namespace of the Iron Functions deployment
+#   - replace %__ironfx_ui_namespace__% with the namespace to deploy this in
+#   - replace %__ironfx_ui_hostname__% with the hostname to access this deployment with
+#   - replace %__kube_lego_secret__% with the secret for your domain name
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ironfx-ui
+  namespace: %__ironfx_ui_namespace__%
+  labels:
+    app: ironfx-ui
+    env: production
+    type: ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ironfx-ui
+      env: production
+      type: ui
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  template:
+    metadata:
+      name: ironfx-ui
+      namespace: %__ironfx_ui_namespace__%
+      labels:
+        app: ironfx-ui
+        env: production
+        type: ui
+    spec:
+      containers:
+      - name: "ironfx-ui"
+        image: "iron/functions-ui:latest"
+        imagePullPolicy: Always
+        securityContext:
+          privileged: true
+        command: [ "npm", "start" ]
+        env:
+        - name: "API_URL"
+          value: "http://ironfx.%__ironfx_namespace__%:8080"
+        ports:
+        - name: ironfx-ui-port
+          containerPort: 4000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ironfx-ui
+  namespace: %__ironfx_ui_namespace__%
+  labels:
+    app: ironfx-ui
+    env: production
+    type: ui
+spec:
+  selector:
+    app: ironfx-ui
+    env: production
+    type: ui
+  ports:
+  - port: 4000
+    targetPort: 4000
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ironfx-ui
+  namespace: %__ironfx_ui_namespace__%
+  annotations:
+    kubernetes.io/ingress.class: 'nginx'
+    ingress.kubernetes.io/auth-type: basic
+    ingress.kubernetes.io/auth-secret: ironfx-ui-authentication
+    ingress.kubernetes.io/auth-realm: "Authentication for UI"
+spec:
+  # disable this if you are not using TLS/don't have kube-lego installed
+  tls:
+  - hosts:
+    - %__ironfx_ui_hostname__%
+    secretName: %__kube_lego_secret__%
+  rules:
+  - host: %__ironfx_ui_hostname__%
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: ironfx-ui
+          servicePort: 4000

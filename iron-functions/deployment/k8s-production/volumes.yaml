@@ -1,0 +1,45 @@
+# Volumes for an Iron Functions Deployment
+# TODOS:
+#   - replace %__ironfx_db_namespace__% with the namespace to deploy the postgres service in
+#   - replace %__aws_volume_id__% with the provisionined volume ID in AWS
+#   - replace %__aws_volume_size__% with the size of the provisionined volume in AWS
+
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: ironfx-volume
+  labels:
+    app: ironfx
+    env: production
+    type: volume
+spec:
+  capacity:
+    storage: %__aws_volume_size__%
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: data
+  # see https://kubernetes.io/docs/api-reference/v1.9/#volume-v1-core for other possible options
+  awsElasticBlockStore:
+    volumeID: %__aws_volume_id__%
+    fsType: ext4
+
+---
+
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: ironfx-volume-claim
+  namespace: %__ironfx_db_namespace__%
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: %__aws_volume_size__%
+  storageClassName: data
+  selector:
+    matchLabels:
+      app: ironfx
+      env: production
+      type: volume

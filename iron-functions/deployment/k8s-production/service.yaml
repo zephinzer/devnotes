@@ -1,0 +1,23 @@
+# Service for Iron Functions application
+# REFERENCES:
+#   - https://github.com/iron-io/functions/tree/master/docs/operating/kubernetes/kubernetes-production
+# TODOS:
+#   - replace %__ironfx_namespace__% with the namespace we should be using
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: ironfx
+  namespace: %__ironfx_namespace__%
+  labels:
+    app: ironfx
+    env: production
+    type: app
+spec:
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    app: ironfx
+    env: production
+    type: app
