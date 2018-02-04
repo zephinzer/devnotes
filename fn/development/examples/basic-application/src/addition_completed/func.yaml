@@ -1,5 +1,5 @@
 name: addition_completed
-version: 0.0.4
+version: 0.0.6
 runtime: node
 entrypoint: node func.js
 path: /addition_completed

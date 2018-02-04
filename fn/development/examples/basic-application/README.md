@@ -42,17 +42,27 @@ This directory contains examples of the various types of application-level verif
 
 - [1. Hello World](./README-EX01.md)
   - Setting up a new function
-  - Running a function locally
-  - Testing a function using Fn's in-built contract tests
+  - Running a function in development
+  - Verifying a function via contract testing
   - Updating a function by pushing to a Docker registry
-  - Deploying a function to a Fn server
+  - Registering a new application
+  - Deploying the function
 - [2. Addition](./README-EX02.md)
-  - Development environment provisioning
+  - Provisioning the development environment
   - Test-driven-development in functions
-  - Reading from input
+  - Reading user input
 - [3. Reflection](./README-EX03.md)
   - Runtime environment of a function
   - Retrieving the HTTP method
   - Retrieving other HTTP headers
+  - Retrieving URL query parameters
   - Asynchronous functions
-  - Error logging
+  - Logging to server but not to client
+- [4. Continuous Integration](./README-EX04.md)
+  - Registering an application by directory
+  - Testing all functions in a pipeline
+  - Deploying all functions from the pipeline
+  - Moving from integration to delivery
+- 5. Testing in Production [WIP]
+  - Prometehus metrics collection
+  - Grafana dashboard visualisation

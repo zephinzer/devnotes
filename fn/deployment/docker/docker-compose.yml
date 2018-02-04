@@ -24,6 +24,8 @@ services:
   dashboard:
     image: grafana/grafana:latest
     environment:
+      - GF_SERVER_ROOT_URL=http://localhost:3000
+      - GF_SECURITY_ADMIN_USER=admin
       - GF_SECURITY_ADMIN_PASSWORD=password
     ports:
       - "3000:3000"
