@@ -63,6 +63,8 @@ This directory contains examples of the various types of application-level verif
   - Testing all functions in a pipeline
   - Deploying all functions from the pipeline
   - Moving from integration to delivery
-- 5. Testing in Production [WIP]
-  - Prometehus metrics collection
-  - Grafana dashboard visualisation
+- [5. Testing in Production (WIP)](./README-EX05.md)
+  - Prometheus metrics collection
+  - Number of times each function was called
+  - Errored functions
+  - Processing duration
