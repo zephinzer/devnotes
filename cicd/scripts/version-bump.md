@@ -25,13 +25,15 @@ git checkout ${COMMIT_BRANCH} .;
 
 GIT_USERNAME="$(git config --global user.name)";
 if [ "${GIT_USERNAME}" = "" ]; then
-  git config --global user.name "${DEFAULT_GIT_USER}";
+  GIT_USERNAME="${DEFAULT_GIT_USER}";
 fi;
+git config --global user.name "${GIT_USERNAME}";
 
 GIT_EMAIL="$(git config --global user.email)";
 if [ "${GIT_EMAIL}" = "" ]; then
-  git config --global user.email "${DEFAULT_GIT_EMAIL}";
+  GIT_EMAIL="${DEFAULT_GIT_EMAIL}";
 fi;
+git config --global user.email "${DEFAULT_GIT_EMAIL}";
 
 if [ -z "${COMMIT_MESSAGE##*${TAG_MAJOR}*}" ]; then
   printf "MAJOR VERSION BUMP\n";
