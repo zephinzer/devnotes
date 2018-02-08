@@ -13,6 +13,8 @@ kc     -> kubectl
 l      -> logs
 n      -> nodes
 p      -> pod
+pv     -> persistentvolume
+pvc    -> persistentvolumeclaim
 s      -> service
 sec    -> secret
 ```
@@ -26,25 +28,33 @@ alias kc='kubectl';
 alias kca='kubectl apply -f';
 alias kccv='kubectl config view';
 alias kcd='kubectl describe';
-alias kcdp='kubectl describe pod';
-alias kcdn='kubectl describe node';
+alias kcdcm='kubectl describe configmap';
 alias kcdd='kubectl describe deployment';
+alias kcdp='kubectl describe pod';
+alias kcdpv='kubectl describe persistentvolume -o wide';
+alias kcdpvc='kubectl describe persistentvolumeclaim -o wide';
+alias kcdn='kubectl describe node';
+alias kcdsec='kubectl describe secret';
 alias kcds='kubectl describe service';
-alias kcdsec='kubectl describe sercret';
 alias kcdi='kubectl describe ingress';
 alias kcdcm='kubectl describe configmap';
 alias kcdel='kubectl delete';
 alias kcdelcm='kubectl delete configmap';
 alias kcdeld='kubectl delete deployment';
 alias kcdelp='kubectl delete pod';
+alias kcdelpv='kubectl delete persistentvolume';
+alias kcdelpvc='kubectl delete persistentvolumeclaim';
+alias kcdelsec='kubectl delete secret';
 alias kcdels='kubectl delete service';
 alias kcdeli='kubectl delete ingress';
 alias kcg='kubectl get';
 alias kcgp='kubectl get pods -o wide';
+alias kcgpv='kubectl get persistentvolume -o wide';
+alias kcgpvc='kubectl get persistentvolumeclaim -o wide';
 alias kcgn='kubectl get nodes -o wide';
 alias kcgep='kubectl get ep -o wide';
 alias kcgd='kubectl get deploy -o wide';
-alias kcgs='kubectl get svc -o wide';
+alias kcgs='kubectl get service -o wide';
 alias kcgsec='kubectl get secrets -o wide';
 alias kcgi='kubectl get ing -o wide';
 alias kcgcm='kubectl get configmap -o wide';
