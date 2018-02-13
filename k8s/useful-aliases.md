@@ -1,4 +1,4 @@
-# Useful Aliases
+# Useful Aliases for Kubernetes
 The following aliases are concatenations of the following shorthands:
 
 ```
