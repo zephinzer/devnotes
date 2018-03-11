@@ -1,0 +1,39 @@
+version: "3"
+services:
+  application:
+    image: ghost:1-alpine
+    environment:
+      database__client: mysql
+      database__connection__host: database
+      database__connection__user: default_user
+      database__connection__password: default_password
+      database__connection__database: ghost
+    ports:
+      - "2368:2368"
+    volumes:
+      - "./data/ghost:/var/lib/ghost/content"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.3"
+          memory: 300M
+        reservations:
+          cpus: "0.1"
+          memory: 100M
+  database:
+    image: mysql:5
+    environment:
+      MYSQL_ROOT_PASSWORD: default_root_password
+      MYSQL_USER: default_user
+      MYSQL_PASSWORD: default_password
+      MYSQL_DATABASE: ghost
+    volumes:
+      - "./data/mysql:/var/lib/mysql"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 300M
+        reservations:
+          cpus: "0.2"
+          memory: 100M
