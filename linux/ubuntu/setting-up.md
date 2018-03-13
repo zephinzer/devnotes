@@ -11,6 +11,9 @@ sudo apt install chromium-browser;
 sudo apt install dconf-editor;
 ```
 
+## Gnome Keyring
+https://wiki.archlinux.org/index.php/GNOME/Keyring
+
 ## MySQL WorkBench
 ```bash
 https://dev.mysql.com/downloads/workbench/
