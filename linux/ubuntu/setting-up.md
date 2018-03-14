@@ -14,6 +14,15 @@ sudo apt install dconf-editor;
 ## Gnome Keyring
 https://wiki.archlinux.org/index.php/GNOME/Keyring
 
+## Kubernetes (`kubectl`)
+```bash
+curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl;
+
+chmod +x ./kubectl;
+
+sudo mv ./kubectl /usr/local/bin/kubectl
+```
+
 ## MySQL WorkBench
 ```bash
 https://dev.mysql.com/downloads/workbench/
