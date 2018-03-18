@@ -1,18 +1,22 @@
-
-
 # Applications
 ## Chromium
+Because screw Chrome.
+
 ```bash
 sudo apt install chromium-browser;
+```
+
+## Chrome Gnome Shell
+For installing extensions
+
+```bash
+sudo apt-get install chrome-gnome-shell
 ```
 
 ## DConf Editor
 ```bash
 sudo apt install dconf-editor;
 ```
-
-## Gnome Keyring
-https://wiki.archlinux.org/index.php/GNOME/Keyring
 
 ## Kubernetes (`kubectl`)
 ```bash
@@ -21,6 +25,11 @@ curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s htt
 chmod +x ./kubectl;
 
 sudo mv ./kubectl /usr/local/bin/kubectl
+```
+
+## Laptop Mode Tools
+```bash
+sudo apt install laptop-mode-tools;
 ```
 
 ## MySQL WorkBench
@@ -43,6 +52,13 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | b
 ## Telegram
 https://telegram.org
 
+## Unity Tweak Tool
+This replaces the GNOME tweak tool which doesn't work on Ubuntu.
+
+```bash
+sudo apt install unity-tweak-tool;
+```
+
 ## Visual Studio Code
 https://code.visualstudio.com/docs/setup/linux#_visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc
 
@@ -64,23 +80,6 @@ sudo usermod -aG docker $USER;
 ```
 
 Source: https://docs.docker.com/install/linux/linux-postinstall/
-
-## Gnome Network Manager
-- this helps with connecting to a VPN using a GUI
-
-```bash
-sudo apt install network-manager-openvpn-gnome;
-```
-
-## Gnome Tweak Tool
-```bash
-sudo apt install gnome-tweak-tool;
-```
-
-## Laptop Mode Tools
-```bash
-sudo apt install laptop-mode-tools;
-```
 
 # Other Useful Reading
 - [PowerManagement/ReducedPower](https://help.ubuntu.com/community/PowerManagement/ReducedPower)
