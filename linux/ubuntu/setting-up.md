@@ -18,6 +18,19 @@ sudo apt-get install chrome-gnome-shell
 sudo apt install dconf-editor;
 ```
 
+## Docker
+https://docs.docker.com/install/linux/docker-ce/ubuntu/#set-up-the-repository
+
+### Running as non-root
+Run:
+
+```bash
+sudo groupadd docker;
+sudo usermod -aG docker $USER;
+```
+
+Source: https://docs.docker.com/install/linux/linux-postinstall/
+
 ## Kubernetes (`kubectl`)
 ```bash
 curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl;
@@ -52,6 +65,11 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | b
 ## Telegram
 https://telegram.org
 
+## Tilix
+```bash
+sudo apt install tilix;
+```
+
 ## Unity Tweak Tool
 This replaces the GNOME tweak tool which doesn't work on Ubuntu.
 
@@ -67,19 +85,6 @@ https://code.visualstudio.com/docs/setup/linux#_visual-studio-code-is-unable-to-
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -;
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list;
 ```
-
-## Docker
-https://docs.docker.com/install/linux/docker-ce/ubuntu/#set-up-the-repository
-
-### Running as non-root
-Run:
-
-```bash
-sudo groupadd docker;
-sudo usermod -aG docker $USER;
-```
-
-Source: https://docs.docker.com/install/linux/linux-postinstall/
 
 # Other Useful Reading
 - [PowerManagement/ReducedPower](https://help.ubuntu.com/community/PowerManagement/ReducedPower)

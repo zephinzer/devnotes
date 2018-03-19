@@ -2,13 +2,30 @@
 
 ## Global Settings
 ### AutoKey Phrases
-CursorToEnd - `<ctrl>+<right>` = `<end>`
-CursorToBottom - `<ctrl>+<down>` = `<ctrl>+<end>`
-CursorToStart - `<ctrl>+<left>` = `<home>`
-CursorToTop - `<ctrl>+<up>` = `<ctrl>+<home>`
-SelectTillEnd - `<ctrl>+<shift>+<right>` = `<shift>+<end>`
-SelectTillStart - `<ctrl>+<shift>+<right>` = `<shift>+<end>`
+- CursorToBottom - `<ctrl>+<down>` = `<ctrl>+<end>`
+- CursorToEnd - `<ctrl>+<right>` = `<end>`
+- CursorToNext - `<super>+<right>` = `<ctrl>+<right>`
+- CursorToPrevious - `<super>+<left>` = `<ctrl>+<left>`
+- CursorToStart - `<ctrl>+<left>` = `<home>`
+- CursorToTop - `<ctrl>+<up>` = `<ctrl>+<home>`
+- SelectTillBottom - `<ctrl>+<shift>+<down>` = `<ctrl>+<shift>+<end>`
+- SelectTillEnd - `<ctrl>+<shift>+<right>` = `<shift>+<end>`
+- SelectTillNext - `<shift>+<super>+<right>` = `<ctrl>+<shift>+<right>`
+- SelectTillPrevious - `<shift>+<super>+<left>` = `<ctrl>+<shift>+<left>`
+- SelectTillStart - `<ctrl>+<shift>+<left>` = `<shift>+<home>`
+- SelectTillTop - `<ctrl>+<shift>+<up>` = `<ctrl>+<shift>+<home>`
+- TabNavNext - `<ctrl>+<shift>+]` = `<ctrl>+<page_down>`
+- TabNavPrevious - `<ctrl>+<shift>+[` = `<ctrl>+<page_up>`
 
+### Disable Shortcut Hints Overlay
+#### Install Compiz Configuration Settings Manager
+Install it using:
+
+```bash
+sudo apt install compizconfig-settings-manager;
+```
+#### Disable Shortcut Hints
+Open Compiz Configuration Settings Manager and go to the **Desktop** section. Click on **Ubuntu Unity Plugin** and go to the **General** navigation tab. Unselect the option *Enable Shortcut Hints Overlay*.
 
 ### Swap the Alt/Ctrl Keys
 #### Using XModMap
@@ -82,7 +99,7 @@ Scroll down to the **Edit** section. Change:
 Tilix is a nice replacement for iTerm2. However, some shortcuts are different. Get Tilix with:
 
 ```bash
-sudo apt install tilix
+sudo apt install tilix;
 ```
 
 Click on the menu bar on the Tilix icon and click on **Preferences**.
@@ -97,7 +114,6 @@ Go to the **Shortcuts** menu bar item and set the following shortcuts so that th
 - **Terminal/Copy** - `Ctrl+C`
 - **Terminal/Paste** - `Ctrl+V`
 
-
 ### Visual Studio Code
 #### Install Sublime Keybindings
 Search the themes for sublime and install the Sublime keybindings from the extension **Sublime Text Keymap**.
@@ -105,17 +121,15 @@ Search the themes for sublime and install the Sublime keybindings from the exten
 #### Cursor Keybindings
 Open the keyboard shortcuts and make the following changes:
 
-`cursorWordEndRight` -> `Windows+RightArrow`
-`cursorWordStartLeft` -> `Windows+LeftArrow`
-`cursorWordStartLeftSelect` -> `Shift+Windows+LeftArrow`
-`cursorWordStartRightSelect` -> `Shift+Windows+RightArrow`
-`editor.action.copyLinesDownAction` -> `Shift+Windows+DownArrow`
-`editor.action.insertCursorAbove` -> `Ctrl+Shift+Windows+UpArrow` *
-`editor.action.insertCursorBelow` -> `Ctrl+Shift+Windows+DownArrow` *
-`editor.action.copyLinesUpAction` -> `Shift+Windows+UpArrow`
-`editor.action.moveLinesDownAction` -> `Windows+DownArrow`
-`editor.action.moveLinesUpAction` -> `Windows+UpArrow`
-`renameFile` -> `Shift+Enter`
-`workbench.action.terminal.toggleTerminal` -> `Alt+\``
+- `editor.action.copyLinesDownAction` -> `Shift+Windows+DownArrow`
+- `editor.action.insertCursorAbove` -> `Ctrl+Shift+Windows+UpArrow` *missing G from OS X*
+- `editor.action.insertCursorBelow` -> `Ctrl+Shift+Windows+DownArrow` *missing G from OS X*
+- `editor.action.copyLinesUpAction` -> `Shift+Windows+UpArrow`
+- `editor.action.moveLinesDownAction` -> `Windows+DownArrow`
+- `editor.action.moveLinesUpAction` -> `Windows+UpArrow`
+- `renameFile` -> `Shift+Enter` *Enter on OS X*
+- `workbench.action.nextEditor` -> `Ctrl+PageDown`
+- `workbench.action.previousEditor` -> `Ctrl+PageUp`
+- `workbench.action.terminal.toggleTerminal` -> `Alt+\``
 
 > Key mappings with a * notation indicate where the keymapping is not exactly according to OS X
