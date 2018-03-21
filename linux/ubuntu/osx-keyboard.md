@@ -131,5 +131,7 @@ Open the keyboard shortcuts and make the following changes:
 - `workbench.action.nextEditor` -> `Ctrl+PageDown`
 - `workbench.action.previousEditor` -> `Ctrl+PageUp`
 - `workbench.action.terminal.toggleTerminal` -> `Alt+\``
+- `workbench.action.terminal.copySelection` -> `Ctrl+C`
+- `workbench.action.terminal.paste` -> `Ctrl+V`
 
 > Key mappings with a * notation indicate where the keymapping is not exactly according to OS X

@@ -31,6 +31,14 @@ sudo usermod -aG docker $USER;
 
 Source: https://docs.docker.com/install/linux/linux-postinstall/
 
+## Emoji Support
+
+```bash
+sudo apt-add-repository ppa:eosrei/fonts;
+sudo apt-get update;
+sudo apt-get install fonts-twemoji-svginot;
+```
+
 ## Kubernetes (`kubectl`)
 ```bash
 curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl;
@@ -60,6 +68,14 @@ curl -sL https://deb.nodesource.com/setup_${NE}.x | sudo -E bash -
 ## Node Version Manager
 ```bash
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+```
+
+## Nvidia Drivers
+> Note that Nvidia drivers are proprietary
+
+```bash
+sudo add-apt-repository ppa:graphics-drivers/ppa;
+sudo apt update;
 ```
 
 ## Telegram
