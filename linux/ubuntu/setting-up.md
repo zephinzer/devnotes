@@ -101,6 +101,9 @@ This replaces the GNOME tweak tool which doesn't work on Ubuntu.
 sudo apt install unity-tweak-tool;
 ```
 
+## Vault (HashiCorp)
+https://www.vaultproject.io/downloads.html
+
 ## Visual Studio Code
 https://code.visualstudio.com/docs/setup/linux#_visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc
 

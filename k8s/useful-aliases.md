@@ -19,6 +19,7 @@ pv     -> persistentvolume
 pvc    -> persistentvolumeclaim
 s      -> service
 sec    -> secret
+t      -> top
 ```
 
 The lengths and abbreviations were decided based on how frequently they seemed to be used by me and they seem reasonable. Higher impact verbs such as `delete` are given a slightly longer abbreviation - `del` - so that one doesn't accidentally trigger them.
@@ -51,6 +52,7 @@ alias kcdelpv='kubectl delete persistentvolume';
 alias kcdelpvc='kubectl delete persistentvolumeclaim';
 alias kcdelsec='kubectl delete secret';
 alias kcdels='kubectl delete service';
+alias kcexec='kubectl exec';
 alias kcg='kubectl get';
 alias kcgcm='kubectl get configmap -o wide';
 alias kcgd='kubectl get deployment -o wide';
@@ -65,5 +67,6 @@ alias kcgs='kubectl get services -o wide';
 alias kcgsec='kubectl get secrets -o wide';
 alias kcl='kubectl logs';
 alias kclf='kubectl logs -f';
-alias kcexec='kubectl exec';
+alias kctn='kubectl top nodes';
+alias kctp='kubectl top pods';
 ```
