@@ -39,6 +39,14 @@ sudo apt-get update;
 sudo apt-get install fonts-twemoji-svginot;
 ```
 
+## File System Support
+
+### EX-FAT
+
+```bash
+sudo apt-get install exfat-utils exfat-fuse;
+```
+
 ## Kubernetes (`kubectl`)
 ```bash
 curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl;
