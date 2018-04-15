@@ -66,6 +66,14 @@ sudo apt install laptop-mode-tools;
 https://dev.mysql.com/downloads/workbench/
 ```
 
+## No Notifications
+For a *Do Not Disturb* mode.
+
+```bash
+sudo add-apt-repository ppa:vlijm/nonotifs;
+sudo apt-get update && sudo apt-get install nonotifs;
+```
+
 ## Node
 ```bash
 NE=6
