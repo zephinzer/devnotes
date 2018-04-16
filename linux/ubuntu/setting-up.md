@@ -81,6 +81,8 @@ curl -sL https://deb.nodesource.com/setup_${NE}.x | sudo -E bash -
 ```
 > Change the `NODE_VERSION` variable value to 6/7/8/9 *et cetera*.
 
+Also add the path `${PWD}/node_modules/.bin` to your exported `PATH` environment variable so that you can run binaries from local repositories.
+
 ## Node Version Manager
 ```bash
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
