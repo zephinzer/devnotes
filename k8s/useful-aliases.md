@@ -26,7 +26,7 @@ The lengths and abbreviations were decided based on how frequently they seemed t
 
 Include the following inside your `~/.profile` or specific `.[?]shrc` file:
 
-```sh
+```bash
 alias kc='kubectl';
 alias kca='kubectl apply -f';
 alias kccv='kubectl config view';
