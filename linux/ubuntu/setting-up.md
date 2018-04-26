@@ -1,4 +1,10 @@
 # Applications
+## AutoKey
+
+```sh
+sudo apt install autokey-gtk;
+```
+
 ## Chromium
 Because screw Chrome.
 
@@ -178,6 +184,10 @@ https://code.visualstudio.com/docs/setup/linux#_visual-studio-code-is-unable-to-
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -;
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list;
 ```
+
+# Others
+## Keyboard Backlight
+This setting is located at `/sys/class/leds/tpacpi::kbd_backlight/brightness`.
 
 # Other Useful Reading
 - [PowerManagement/ReducedPower](https://help.ubuntu.com/community/PowerManagement/ReducedPower)

@@ -57,12 +57,12 @@ sudo apt install compizconfig-settings-manager;
 ```
 
 #### Setting Application Switcher Keybinding
-Open the Compiz Configuration Settings Manager, scroll to **Desktops** and click on the **Switcher** top navigation tab. Set the keybinding for **Key to start the Switcher** to `<Control><Tab>`. This allows us to use the re-mapped `Alt` hardware key to switch through tabs, like how OS X does it.
+Open the Compiz Configuration Settings Manager and go to Ubuntu Unity Plugin, scroll to **Desktops** and click on the **Switcher** top navigation tab. Set the keybinding for **Key to start the Switcher** to `<Control><Tab>`. This allo  ws us to use the re-mapped `Alt` hardware key to switch through tabs, like how OS X does it.
 
 #### Setting Window Switcher Keybinding
 > This engages a known bug in Unity Ubuntu Plugin where even though the setting shows *Disabled*, it's actually enabled. The solution is just to override the keybinding to something that doesn't get in the way.
 
-Open the Compiz Configuration Settings Manager, scroll to **Desktops** and click on the **Switcher** top navigation tab. Set the keybinding for the **Key to flip through windows in the switcher** and **Key to flip through windows in the switcher backwards** to `<Control><Alt>grave` and `<Control><Shift><Alt>asciitilde` respectively. (`grave`) is the backquote, (`asciitilde`) is your tilda.
+Open the Compiz Configuration Settings Manager and go to Ubuntu Unity Plugin, scroll to **Desktops** and click on the **Switcher** top navigation tab. Set the keybinding for the **Key to flip through windows in the switcher** and **Key to flip through windows in the switcher backwards** to `<Control><Alt>grave` and `<Control><Shift><Alt>asciitilde` respectively. (`grave`) is the backquote, (`asciitilde`) is your tilda.
 
 ###### References
 - Error in Unity Ubuntu Plugin: https://askubuntu.com/questions/168265/how-do-i-disable-or-change-the-alt-shortcut-to-switch-between-multiple-win
@@ -128,6 +128,7 @@ Open the keyboard shortcuts and make the following changes:
 - `editor.action.moveLinesDownAction` -> `Windows+DownArrow`
 - `editor.action.moveLinesUpAction` -> `Windows+UpArrow`
 - `renameFile` -> `Shift+Enter` *Enter on OS X*
+- `deleteFile` -> `Shift+Backspace` *Backspace on OS X*
 - `workbench.action.nextEditor` -> `Ctrl+PageDown`
 - `workbench.action.previousEditor` -> `Ctrl+PageUp`
 - `workbench.action.terminal.toggleTerminal` -> `Alt+\``
