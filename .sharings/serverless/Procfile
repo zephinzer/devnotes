@@ -1,2 +1,0 @@
-fnserver: npm run start-fn-server
-fnui: npm run start-fn-ui
