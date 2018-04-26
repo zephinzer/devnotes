@@ -1,0 +1,19 @@
+{
+  "name": "ace-technical-sharing-serverless-by-joseph",
+  "bin": {
+    "present": "./start"
+  },
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "reveal-md -w \"./index.md\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "foreman": "^2.0.0",
+    "reveal-md": "^2.0.2"
+  }
+}
