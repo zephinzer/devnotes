@@ -1,0 +1,22 @@
+{
+  "name": "ace-technical-sharing-serverless-by-joseph",
+  "bin": {
+    "present": "./start"
+  },
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "reveal-md -w \"./index.md\"",
+    "start-fn": "nf start",
+    "start-fn-server": "fn start",
+    "start-fn-ui": "docker run --rm --link fnserver:api -p 4000:4000 -e \"FN_API_URL=http://api:8080\" fnproject/ui"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "foreman": "^2.0.0",
+    "reveal-md": "^2.0.2"
+  }
+}

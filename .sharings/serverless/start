@@ -1,0 +1,3 @@
+#!/bin/sh
+CURRDIR=$(dirname $0);
+${CURRDIR}/reveal-md -w "${CURRDIR}/../ace-technical-sharing-serverless-by-joseph/index.md";
