@@ -19,6 +19,15 @@ sudo apt install dconf-editor;
 ```
 
 ## Docker
+
+```bash
+sudo apt-get install apt-transport-https ca-certificates curl software-properties-common;
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -;
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable";
+sudo apt-get install docker-ce python python-pip;
+sudo systemctl enable docker;
+sudo pip install docker-compose;
+```
 https://docs.docker.com/install/linux/docker-ce/ubuntu/#set-up-the-repository
 
 ### Running as non-root
@@ -28,6 +37,8 @@ Run:
 sudo groupadd docker;
 sudo usermod -aG docker $USER;
 ```
+
+> You need to logout after this and log back in
 
 Source: https://docs.docker.com/install/linux/linux-postinstall/
 
@@ -53,7 +64,7 @@ curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s htt
 
 chmod +x ./kubectl;
 
-sudo mv ./kubectl /usr/local/bin/kubectl
+sudo mv ./kubectl /usr/local/bin/kubectl;
 ```
 
 ## Laptop Mode Tools
@@ -61,7 +72,13 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 sudo apt install laptop-mode-tools;
 ```
 
-## MySQL WorkBench
+## MySQL
+```
+sudo apt-get install mysql-server;
+sudo mysql_secure_installation;
+```
+
+### MySQL WorkBench
 ```bash
 https://dev.mysql.com/downloads/workbench/
 ```
@@ -76,6 +93,7 @@ sudo apt-get update && sudo apt-get install nonotifs;
 
 ## Node
 ```bash
+sudo apt-get install -y build-essential;
 NE=6
 curl -sL https://deb.nodesource.com/setup_${NE}.x | sudo -E bash -
 ```
@@ -94,6 +112,44 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | b
 ```bash
 sudo add-apt-repository ppa:graphics-drivers/ppa;
 sudo apt update;
+```
+
+## Physical Hard-Disk Access
+
+Go to VirtualBox GUI and create a new image without a hard drive.
+
+Run `sudo fdisk -l` to retrieve the Windows partition.
+
+Run `VBoxManage internalcommands createrawvmdk -filename "</path/to/file>.vmdk" -rawdisk /dev/sda` to create the VMDK.
+
+## Postman
+
+```bash
+wget https://dl.pstmn.io/download/latest/linux64 -O postman.tar.gz;
+sudo tar -xzf postman.tar.gz -C /opt;
+rm postman.tar.gz;
+sudo ln -s /opt/Postman/Postman /usr/bin/postman;
+```
+
+## Selenium
+
+```bash
+rm ~/selenium-server-standalone-*.jar;
+rm ~/chromedriver_linux64.zip;
+sudo rm /usr/local/bin/chromedriver;
+sudo rm /usr/local/bin/selenium-server-standalone.jar;
+sudo apt-get update;
+sudo apt-get install -y unzip openjdk-8-jre-headless xvfb libxi6 libgconf-2-4;
+wget -N http://chromedriver.storage.googleapis.com/$(curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE)/chromedriver_linux64.zip -P ~/;
+unzip ~/chromedriver_linux64.zip -d ~/;
+rm ~/chromedriver_linux64.zip;
+sudo mv -f ~/chromedriver /usr/local/bin/chromedriver;
+sudo chown root:root /usr/local/bin/chromedriver;
+sudo chmod 0755 /usr/local/bin/chromedriver;
+wget -N http://selenium-release.storage.googleapis.com/3.4/selenium-server-standalone-3.4.0.jar -P ~/;
+sudo mv -f ~/selenium-server-standalone-3.4.0.jar /usr/local/bin/selenium-server-standalone.jar;
+sudo chown root:root /usr/local/bin/selenium-server-standalone.jar;
+sudo chmod 0755 /usr/local/bin/selenium-server-standalone.jar;
 ```
 
 ## Telegram
