@@ -127,8 +127,8 @@ Open the keyboard shortcuts and make the following changes:
 - `editor.action.copyLinesUpAction` -> `Shift+Windows+UpArrow`
 - `editor.action.moveLinesDownAction` -> `Windows+DownArrow`
 - `editor.action.moveLinesUpAction` -> `Windows+UpArrow`
-- `renameFile` -> `Shift+Enter` *Enter on OS X*
-- `deleteFile` -> `Shift+Backspace` *Backspace on OS X*
+- `renameFile` -> `Ctrl+Enter` *Enter on OS X*
+- `deleteFile` -> `Ctrl+Backspace` *Backspace on OS X*
 - `workbench.action.nextEditor` -> `Ctrl+PageDown`
 - `workbench.action.previousEditor` -> `Ctrl+PageUp`
 - `workbench.action.terminal.toggleTerminal` -> `Alt+\``
