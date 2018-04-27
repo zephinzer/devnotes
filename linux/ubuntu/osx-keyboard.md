@@ -79,6 +79,9 @@ sudo apt install compizconfig-settings-manager;
 #### Enable the Static Application Switcher
 Open the Compiz Configuration Settings Manager, scroll to **Windows Management** and enable **Static Application Switcher**. You should encounter some conflicts, for most of the cases, disable the keybindings from the old **Application Switcher**
 
+### Set Screenshots
+Go to the standard Ubuntu Settings, click on **Keyboard** and go to **Shortcuts** and then into **Screenshots**. Set the shortcuts to what you use on OS X.
+
 ## Application Settings
 ### Terminal
 Open the Terminal and go to the preferences from the menu bar (**Terminal > Preferences**).
