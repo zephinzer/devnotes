@@ -87,6 +87,12 @@ sudo mv ./kubectl /usr/local/bin/kubectl;
 sudo apt install laptop-mode-tools;
 ```
 
+To start it, run:
+
+```sh
+gksu lmt-config-gui;
+```
+
 ## MySQL
 ```
 sudo apt-get install mysql-server;
