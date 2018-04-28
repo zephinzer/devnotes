@@ -73,6 +73,14 @@ sudo apt-get install fonts-twemoji-svginot;
 sudo apt-get install exfat-utils exfat-fuse;
 ```
 
+## Golang
+
+```sh
+sudo add-apt-repository ppa:gophers/archive;
+sudo apt update;
+sudo apt-get install golang-1.10-go;
+```
+
 ## Kubernetes (`kubectl`)
 ```bash
 curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl;
