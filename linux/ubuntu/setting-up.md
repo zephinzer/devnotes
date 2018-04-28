@@ -152,6 +152,12 @@ rm postman.tar.gz;
 sudo ln -s /opt/Postman/Postman /usr/bin/postman;
 ```
 
+## PowerTop
+
+```sh
+sudo apt install powertop fancontrol;
+```
+
 ## Selenium
 
 ```bash
@@ -177,7 +183,10 @@ sudo chmod 0755 /usr/local/bin/selenium-server-standalone.jar;
 https://telegram.org
 
 ## Tilix
+
 ```bash
+sudo add-apt-repository ppa:webupd8team/terminix;
+sudo apt-get update;
 sudo apt install tilix;
 ```
 
@@ -203,8 +212,13 @@ sudo apt install yarn;
 ```
 
 # Others
+
+## Remove Amazon Integration
+sudo rm /usr/share/applications/ubuntu-amazon-default.desktop;
+sudo rm /usr/share/unity-webapps/userscripts/unity-webapps-amazon;
+
 ## Keyboard Backlight
-This setting is located at `/sys/class/leds/tpacpi::kbd_backlight/brightness`.
+This setting is located at `/sys/class/leds/tpacpi::kbd_backlight/brightness`. Or you could use `Fn+Space`.
 
 # Other Useful Reading
 - [PowerManagement/ReducedPower](https://help.ubuntu.com/community/PowerManagement/ReducedPower)
