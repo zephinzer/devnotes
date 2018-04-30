@@ -1,4 +1,11 @@
 # Applications
+
+## AutoKey
+
+```sh
+sudo apt install autokey-gtk;
+```
+
 ## Chromium
 Because screw Chrome.
 
@@ -13,22 +20,30 @@ For installing extensions
 sudo apt-get install chrome-gnome-shell
 ```
 
+## Compiz Settings Manager
+
+```bash
+sudo apt install compiz-settings-manager compiz-plugins compiz-extra-plugins
+```
+
 ## DConf Editor
 ```bash
 sudo apt install dconf-editor;
 ```
 
 ## Docker
-
+### Setup
 ```bash
-sudo apt-get install apt-transport-https ca-certificates curl software-properties-common;
+sudo apt-get -y install apt-transport-https ca-certificates curl software-properties-common;
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -;
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable";
-sudo apt-get install docker-ce python python-pip;
+sudo apt-get update;
+sudo apt-get -y install docker-ce python python-pip;
 sudo systemctl enable docker;
 sudo pip install docker-compose;
 ```
-https://docs.docker.com/install/linux/docker-ce/ubuntu/#set-up-the-repository
+
+> Source: https://docs.docker.com/install/linux/docker-ce/ubuntu/#set-up-the-repository
 
 ### Running as non-root
 Run:
@@ -58,7 +73,18 @@ sudo apt-get install fonts-twemoji-svginot;
 sudo apt-get install exfat-utils exfat-fuse;
 ```
 
-## Kubernetes (`kubectl`)
+## Golang
+
+```sh
+sudo add-apt-repository ppa:gophers/archive;
+sudo apt update;
+sudo apt-get install golang-1.10-go;
+```
+
+## Kubernetes
+
+### `kubectl`
+#### Via Download
 ```bash
 curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl;
 
@@ -67,9 +93,36 @@ chmod +x ./kubectl;
 sudo mv ./kubectl /usr/local/bin/kubectl;
 ```
 
+#### Via Package Manager
+```
+apt-get update && apt-get install -y apt-transport-https;
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -;
+cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
+deb http://apt.kubernetes.io/ kubernetes-xenial main
+EOF;
+apt-get update;
+apt-get install -y kubectl;
+```
+
+### `minikube`
+
+```sh
+MINIKUBE_VERSION="$(curl -sSL -X GET https://api.github.com/repos/kubernetes/minikube/releases/latest | jq -r '.tag_name')";
+curl -Lo minikube "https://storage.googleapis.com/minikube/releases/${MINIKUBE_VERSION}/minikube-linux-amd64";
+chmod +x minikube;
+sudo mv minikube "/opt/minikube-${MINIKUBE_VERSION}";
+sudo ln -s /opt/minikube-${MINIKUBE_VERSION} /usr/local/bin/minikube;
+```
+
 ## Laptop Mode Tools
 ```bash
 sudo apt install laptop-mode-tools;
+```
+
+To start it, run:
+
+```sh
+gksu lmt-config-gui;
 ```
 
 ## MySQL
@@ -103,7 +156,7 @@ Also add the path `${PWD}/node_modules/.bin` to your exported `PATH` environment
 
 ## Node Version Manager
 ```bash
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 ```
 
 ## Nvidia Drivers
@@ -131,6 +184,12 @@ rm postman.tar.gz;
 sudo ln -s /opt/Postman/Postman /usr/bin/postman;
 ```
 
+## PowerTop
+
+```sh
+sudo apt install powertop fancontrol;
+```
+
 ## Selenium
 
 ```bash
@@ -156,7 +215,10 @@ sudo chmod 0755 /usr/local/bin/selenium-server-standalone.jar;
 https://telegram.org
 
 ## Tilix
+
 ```bash
+sudo add-apt-repository ppa:webupd8team/terminix;
+sudo apt-get update;
 sudo apt install tilix;
 ```
 
@@ -177,7 +239,18 @@ https://code.visualstudio.com/docs/setup/linux#_visual-studio-code-is-unable-to-
 ```bash
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -;
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list;
+sudo apt update;
+sudo apt install yarn;
 ```
+
+# Others
+
+## Remove Amazon Integration
+sudo rm /usr/share/applications/ubuntu-amazon-default.desktop;
+sudo rm /usr/share/unity-webapps/userscripts/unity-webapps-amazon;
+
+## Keyboard Backlight
+This setting is located at `/sys/class/leds/tpacpi::kbd_backlight/brightness`. Or you could use `Fn+Space`.
 
 # Other Useful Reading
 - [PowerManagement/ReducedPower](https://help.ubuntu.com/community/PowerManagement/ReducedPower)

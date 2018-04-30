@@ -57,12 +57,12 @@ sudo apt install compizconfig-settings-manager;
 ```
 
 #### Setting Application Switcher Keybinding
-Open the Compiz Configuration Settings Manager, scroll to **Desktops** and click on the **Switcher** top navigation tab. Set the keybinding for **Key to start the Switcher** to `<Control><Tab>`. This allows us to use the re-mapped `Alt` hardware key to switch through tabs, like how OS X does it.
+Open the Compiz Configuration Settings Manager and go to Ubuntu Unity Plugin, scroll to **Desktops** and click on the **Switcher** top navigation tab. Set the keybinding for **Key to start the Switcher** to `<Control><Tab>`. This allo  ws us to use the re-mapped `Alt` hardware key to switch through tabs, like how OS X does it.
 
 #### Setting Window Switcher Keybinding
 > This engages a known bug in Unity Ubuntu Plugin where even though the setting shows *Disabled*, it's actually enabled. The solution is just to override the keybinding to something that doesn't get in the way.
 
-Open the Compiz Configuration Settings Manager, scroll to **Desktops** and click on the **Switcher** top navigation tab. Set the keybinding for the **Key to flip through windows in the switcher** and **Key to flip through windows in the switcher backwards** to `<Control><Alt>grave` and `<Control><Shift><Alt>asciitilde` respectively. (`grave`) is the backquote, (`asciitilde`) is your tilda.
+Open the Compiz Configuration Settings Manager and go to Ubuntu Unity Plugin, scroll to **Desktops** and click on the **Switcher** top navigation tab. Set the keybinding for the **Key to flip through windows in the switcher** and **Key to flip through windows in the switcher backwards** to `<Control><Alt>grave` and `<Control><Shift><Alt>asciitilde` respectively. (`grave`) is the backquote, (`asciitilde`) is your tilda.
 
 ###### References
 - Error in Unity Ubuntu Plugin: https://askubuntu.com/questions/168265/how-do-i-disable-or-change-the-alt-shortcut-to-switch-between-multiple-win
@@ -78,6 +78,9 @@ sudo apt install compizconfig-settings-manager;
 
 #### Enable the Static Application Switcher
 Open the Compiz Configuration Settings Manager, scroll to **Windows Management** and enable **Static Application Switcher**. You should encounter some conflicts, for most of the cases, disable the keybindings from the old **Application Switcher**
+
+### Set Screenshots
+Go to the standard Ubuntu Settings, click on **Keyboard** and go to **Shortcuts** and then into **Screenshots**. Set the shortcuts to what you use on OS X.
 
 ## Application Settings
 ### Terminal
@@ -127,7 +130,8 @@ Open the keyboard shortcuts and make the following changes:
 - `editor.action.copyLinesUpAction` -> `Shift+Windows+UpArrow`
 - `editor.action.moveLinesDownAction` -> `Windows+DownArrow`
 - `editor.action.moveLinesUpAction` -> `Windows+UpArrow`
-- `renameFile` -> `Shift+Enter` *Enter on OS X*
+- `renameFile` -> `Ctrl+Enter` *Enter on OS X*
+- `deleteFile` -> `Ctrl+Backspace` *Backspace on OS X*
 - `workbench.action.nextEditor` -> `Ctrl+PageDown`
 - `workbench.action.previousEditor` -> `Ctrl+PageUp`
 - `workbench.action.terminal.toggleTerminal` -> `Alt+\``
