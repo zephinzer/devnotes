@@ -1,0 +1,19 @@
+{
+	"name": "hellofn",
+	"version": "1.0.0",
+	"description": "example function",
+	"main": "func.js",
+	"author": "",
+	"license": "Apache-2.0",
+	"scripts": {
+		"test": "fn deploy --app example --local && npm run load",
+		"load": "autocannon -c 200 -d 10 -r 50 http://localhost:8080/r/example/load-test",
+		"verify": "curl -vv http://localhost:8080/r/example/load-test"
+	},
+	"dependencies": {
+		"@fnproject/fdk": "0.x"
+	},
+	"devDependencies": {
+		"autocannon": "^2.2.0"
+	}
+}

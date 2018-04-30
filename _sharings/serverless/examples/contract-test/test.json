@@ -1,0 +1,37 @@
+{
+  "tests": [
+    {
+        "input": {
+            "body": {
+                "value1": 4,
+                "value2": 4
+            }
+        },
+        "output": {
+            "body": 8
+        }
+    },
+    {
+        "input": {
+            "body": {
+                "value1": -4,
+                "value2": 4
+            }
+        },
+        "output": {
+            "body": 0
+        }
+    },
+    {
+        "input": {
+            "body": {
+                "value1": -4,
+                "value2": -4
+            }
+        },
+        "output": {
+            "body": -8
+        }
+    }
+  ]
+}

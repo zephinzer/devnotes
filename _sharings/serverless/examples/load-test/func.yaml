@@ -1,0 +1,5 @@
+name: load-test
+version: 0.0.8
+runtime: node
+entrypoint: node func.js
+format: json

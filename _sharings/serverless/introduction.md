@@ -38,7 +38,7 @@ functions-as-a-service
 
 ---
 
-### where we came from
+<span style="font-size:1.5em">monolith</span> > services > <span style="font-size: 0.5em">services</span> > <span style="font-size:1.5em">f( *x* )</span>
 
 ------
 
@@ -78,6 +78,8 @@ functions-as-a-service
 
 ---
 
+<!-- .slide: data-align="left" -->
+
 ### the good
 
 - really small deployments
@@ -86,40 +88,41 @@ functions-as-a-service
 
 ------
 
-##### really small deployments
-
 - lower risk of breaking things
-
-------
-
-##### language/framework independent
-
-- no lock in
-- easily disposable code
+- easily disposable code - no legacy
 - onboard based on capability
-
-------
-
-##### scale based on usage
-
+- ease of outsourcing
 - lower costs
-- pay only for what is needed
-- `t2.medium`
-  - 0.0584/hour
-  - 1.4016/day
-  - 42.048/month
+- `t2.medium` - 42.048/month
+- let's see the [Lambda Pricing Calculator](https://s3.amazonaws.com/lambda-tools/pricing-calculator.html)
 
 ---
 
 ### the bad
 
-- 
+- difficult to debug
+- complex integration tests
+- relatively immature technologies
+- lack of resources
 
-------
+---
 
-### use cases
+### the useful
 
 - web hooks
 - scheduled tasks
 - data extract/transform/load
-- 
+- file uploads & pre/post-processing
+- event triggered actions
+
+------
+
+- content delivery
+- payment processing
+- file antivirus scans
+- data ingress/sync jobs
+- notification systems
+
+---
+
+[methodology and tools](./methodology-and-tools.md)
