@@ -126,8 +126,13 @@ gksu lmt-config-gui;
 ```
 
 ## MySQL
+### Client Only
+```sh
+sudo apt install mysql-client-core-5.7;
 ```
-sudo apt-get install mysql-server;
+### Server
+```
+sudo apt install mysql-server;
 sudo mysql_secure_installation;
 ```
 
@@ -209,6 +214,14 @@ wget -N http://selenium-release.storage.googleapis.com/3.4/selenium-server-stand
 sudo mv -f ~/selenium-server-standalone-3.4.0.jar /usr/local/bin/selenium-server-standalone.jar;
 sudo chown root:root /usr/local/bin/selenium-server-standalone.jar;
 sudo chmod 0755 /usr/local/bin/selenium-server-standalone.jar;
+```
+
+## Redis
+
+### Client Only
+
+```sh
+sudo apt install redis-tools
 ```
 
 ## Telegram
