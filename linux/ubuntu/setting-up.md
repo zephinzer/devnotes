@@ -245,6 +245,23 @@ sudo apt install unity-tweak-tool;
 ## Vault (HashiCorp)
 https://www.vaultproject.io/downloads.html
 
+## VirtualBox
+
+### Install VirtualBox DKMS
+This is required for accessing USB drives in Windows from Ubuntu
+
+```bash
+sudo apt update;
+sudo apt install virtualbox-dkms;
+sudo usermod -a -G vboxusers $USER;
+```
+
+After applying the `usermod` commamd, log out and log back in for Ubuntu to re-evaulate the user policies.
+
+### Install VirtualBox Extension Pack
+
+For Ubuntus at <= 16.04 go to https://www.virtualbox.org/wiki/Download_Old_Builds_5_1 and download the Extension Pack and install it.
+
 ## Visual Studio Code
 https://code.visualstudio.com/docs/setup/linux#_visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc
 
