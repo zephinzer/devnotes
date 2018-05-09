@@ -46,6 +46,11 @@ Next run the command to let the settings take effect:
 xmodmap ~./.Xmodmap;
 ```
 
+### Nautilus File Rename
+Open `~/.config/nautilus/accels` and search for the line: `; (gtk_accel_path "<Actions>/DirViewActions/Rename" "F2")`.
+
+Change it to `(gtk_accel_path "<Actions>/DirViewActions/Rename" "<Primary>Return")` and run `nautilus -q` to register the new accelerators.
+
 ### Configure Application Switcher
 By default, Ubuntu uses `Alt+Tab` to switch applications. We configure this to use `Ctrl+Tab` so that together with the `Xmodmap` configuration, the application switcher works as expected.
 
