@@ -35,3 +35,10 @@ If you run `sdkmanager --licenses` and the licenses are still not accepted, it's
 3. `$ANDROID_HOME` is set to your tools directory (the stupid mistake I made)
 
 This fails silently and wasted me lots of time.
+
+### `.android/repositories.cfg` not found
+The error message sounds like it was your duty to make sure it was there. It'll be there if you installed Android Studio, but if you installed the command line tools only, it won't. To solve this, simply run:
+
+```bash
+touch ~/.android/repositories.cfg
+```
