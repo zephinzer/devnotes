@@ -42,6 +42,13 @@ Linux ${USER} 4.13.0-43-generic #48~16.04.1-Ubuntu SMP Thu $MONTH $DATE $HR:$MIN
 8. Plug your device in. You should see a prompt on your device asking for permissions, tap on the **Always allow** checkbox and hit **OK**.
 9. Done.
 
+## Running Android App on Emulator
+1. Install the emulator - `sdkmanager "emulator"`
+2. Install a system image - `sdkmanager "system-images;android-25;google_apis;x86"`
+3. Create a new AVD - `avdmanager create avd -k "system-images;android-25;google_apis;x86" -n test-device`
+4. Verify the new AVD exists - `emulator -list-avds`
+5. Verify the emulator tool exists - `ll $ANDROID_HOME/emulator`
+6. Check which emulator we are on - `which emulator` - if this points to `$ANDROID_HOME/tools/emulator`, change it to point to `$ANDROID_HOME/emulator/emulator`. This can be done by running `cd $ANDROID_HOME/emulator` and then creating a symbolic link `sudo ln -s $ANDROID_HOME/emulator/emulator /usr/bin/emulator`.
 
 ## Gotchas
 
