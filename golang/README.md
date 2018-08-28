@@ -76,3 +76,13 @@ To run a Go application in development:
 ```bash
 go run [...files.go]
 ```
+
+## Using Multiple Versions of Go
+Install GVM:
+
+```bash
+# for bash
+bash < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+# for zsh
+zsh < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+```
