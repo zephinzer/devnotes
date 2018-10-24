@@ -1,5 +1,17 @@
 # SSL Certificates
 
+## Generating a private RSA pem file
+
+```sh
+openssl genpkey -algorithm rsa -out private.pem -pkeyopt rsa_keygen_bits:4096;
+```
+
+## Generating a public RSA pem from private pem file
+
+```sh
+openssl rsa -in private.pem -pubout > public.pem;
+```
+
 ## Generating a Self-Signed SSL Certificate
 
 ```sh
